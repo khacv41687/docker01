@@ -5,7 +5,7 @@ on:
    - main
 jobs:
  deploy:
-  runs-on: self-hosted # 需設置 GitHub Actions Runner 於local
+  runs-on: self-hosted # 需設置 GitHub Actions Runner 於本機
 
   steps:
    - name: Checkout code
