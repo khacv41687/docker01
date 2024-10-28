@@ -13,14 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Stop and remove existing container
-        run: |
-          docker stop hello-world-container || true
-          docker rm hello-world-container || true
-
       - name: Build the Docker image
         run: docker build -t hello-world-image .
 
       - name: Start Docker container
-        run: |
+        run:
           docker run -d -p 80:80 --name hello-world-container hello-world-image
