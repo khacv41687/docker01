@@ -8,10 +8,10 @@ jobs:
   runs-on: self-hosted # 需設置 GitHub Actions Runner 於本機
 
   steps:
-   - name: 檢出程式碼
+   - name: Checkout code
      uses: actions/checkout@v2
-   - name: 構建 Docker 映像
+   - name: Build the Docker image
      run: docker build -t hello-world-image .
-   - name: 啟動 Docker 容器
+   - name: start docker container
      run: |
       docker run -d -p 8081:80 --name hello-world-container hello-world-image
